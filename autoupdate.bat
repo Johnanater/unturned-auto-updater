@@ -67,7 +67,7 @@ SET /p SteamVer=<temp\version.txt
 if "%ServerVer%"=="%SteamVer%" (TIMEOUT %WaitTime% && goto start)
 
 cls
-title Unturned Auto Updater - Updating
+title Auto Update - Updating
 
 echo.
 echo Update detected^^! Starting update at %DATE% - %TIME%^^!
