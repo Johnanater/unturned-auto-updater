@@ -9,18 +9,20 @@ $shutdownTime = IniRead("config.ini", "Config", "ShutdownTime", "ValueNotFound")
 
 ; Send the messages
 For $s = 1 To $servers[0]
-	WinActivate($servers[$s])
-	Send("save{ENTER}", 0)
-	Send("say """ & $saveMessage , 1 )
-	Send("""{ENTER}", 0)
+	If WinActivate($servers[$s]) Then
+		Send("save{ENTER}", 0)
+		Send("say """ & $saveMessage , 1 )
+		Send("""{ENTER}", 0)
+	EndIf
 Next
 
 Sleep($shutdownTime)
 
 For $s = 1 To $servers[0]
-	WinActivate($servers[$s])
-	Send("save{ENTER}", 0)
-	Send("say """ & $shutdownMessage , 1 )
-	Send("""{ENTER}", 0)
-	Send("shutdown 5{ENTER}", 0)
+	If WinActivate($servers[$s]) Then
+		Send("save{ENTER}", 0)
+		Send("say """ & $shutdownMessage , 1 )
+		Send("""{ENTER}", 0)
+		Send("shutdown 5{ENTER}", 0)
+	EndIf
 Next
