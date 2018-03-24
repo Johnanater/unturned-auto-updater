@@ -8,7 +8,7 @@ echo.
 ::Config
 SETLOCAL ENABLEDELAYEDEXPANSION
 	::Steam username and password
-	::You can use "unturnedrocksupdate force_login" or your own account
+	::I recommend that you make another account for this!
 	SET SteamUser=YourUsername
 	SET SteamPass=YourPassword
 	
