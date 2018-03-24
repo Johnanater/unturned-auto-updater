@@ -11,8 +11,6 @@
 
     	Answer: No, you do not have to. You should make another account just for your
             servers and make sure Unturned is in your library.
-            You could use the account "unturnedrocksupdate force_login", but sometimes
-            there have been too many login attempts.
 			
 			
 	2. Is this a virus?
