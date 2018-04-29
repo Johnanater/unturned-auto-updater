@@ -57,7 +57,7 @@ if not exist temp\serverver.txt (
 if exist "lib\SteamCMD\appcache\appinfo.vdf" (del /f lib\SteamCMD\appcache\appinfo.vdf)
 lib\SteamCMD\steamcmd.exe +login %SteamUser% %SteamPass% +app_info_update 1 +app_info_print "304930" +app_info_print "304930" +quit >temp\ver.txt
 findstr /r "buildid" temp\ver.txt > temp\vers.txt
-lib\sed.exe 2,7d temp\vers.txt > temp\version.txt
+lib\sed.exe 2,9d temp\vers.txt > temp\version.txt
 
 ::Setting variables
 SET /p ServerVer=<temp\serverver.txt
