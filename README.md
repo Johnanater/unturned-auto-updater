@@ -8,22 +8,24 @@
 **FAQ:**
 
 	1. Do I have to use my real Steam account?
-
     	Answer: No, you do not have to. You should make another account just for your
             servers and make sure Unturned is in your library.
 			
 			
 	2. Is this a virus?
-
     	Answer: No. The source code for Restart.exe and Start.exe are in the AutoIT .au3 files.
 			sed.exe and wget.exe are GNU ports to Windows and can be found here:
-            Sed: https://sourceforge.net/projects/win-bash/files/shell-complete/latest/ (3.02, In zip)
-            Wget: https://eternallybored.org/misc/wget/ (1.19.2)
+            	Sed: https://sourceforge.net/projects/win-bash/files/shell-complete/latest/ (3.02, In zip)
+            	Wget: https://eternallybored.org/misc/wget/ (1.19.2)
 			
 	3. My antivirus detects Restart.exe and Start.exe as viruses!
     	Answer: As stated in #2, there are no viruses and any detections are false positives. Add an exception
-     			in your antivirus. If Windows Smartscreen is preventing you from running the exe simply hit "More Info"
-      			then hit "Run Anyway".
+		in your antivirus. If Windows Smartscreen is preventing you from running the exe simply hit "More Info"
+		then hit "Run Anyway".
+			
+	4. The console looks really weird. What's wrong with it?
+		Answer: Make sure the file is in UTF-8 format! GitHub encodes it into UTF-8-BOM, which for some reason
+		messes up in CMD.
 				
 **Help:**
 
