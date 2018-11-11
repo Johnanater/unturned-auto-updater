@@ -5,6 +5,9 @@
 3. Run "autoupdate.bat", it will automatically install SteamCMD
 4. Enjoy!
 
+A video tutorial can be found here:
+https://www.youtube.com/watch?v=kiyZfqULYyU
+
 ---
 
 **FAQ:**
