@@ -8,5 +8,5 @@ $serverLnks = StringSplit(IniRead("config.ini", "Config", "ServerLnks", "ValueNo
 
 ; Start the servers
 For $s = 1 To $serverLnks[0]
-	Run(@ComSpec & ' /c ' & 'cd /d ' & $serverDir & ' & ' & $serverLnks[$s], @TempDir, @SW_HIDE)
+	Run(@ComSpec & ' /c ' & 'cd /d ' & $serverDir & ' & ' & 'start ' & $serverLnks[$s], @TempDir, @SW_HIDE)
 Next
