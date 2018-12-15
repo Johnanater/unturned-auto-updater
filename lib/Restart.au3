@@ -6,6 +6,7 @@ $servers = StringSplit ( IniRead("config.ini", "Config", "Servers", "ValueNotFou
 $saveMessage = IniRead("config.ini", "Config", "SaveMessage", "ValueNotFound")
 $shutdownMessage = IniRead("config.ini", "Config", "ShutdownMessage", "ValueNotFound")
 $shutdownTime = IniRead("config.ini", "Config", "ShutdownTime", "ValueNotFound")
+$shutdownKickMessage = IniRead("config.ini", "Config", "ShutdownKickMessage", "ValueNotFound")
 
 ; Send the messages
 For $s = 1 To $servers[0]
@@ -23,6 +24,6 @@ For $s = 1 To $servers[0]
 		Send("save{ENTER}", 0)
 		Send("say """ & $shutdownMessage , 1 )
 		Send("""{ENTER}", 0)
-		Send("shutdown 5{ENTER}", 0)
+		Send("shutdown 5 """ & $shutdownKickMessage & """{ENTER}", 0)
 	EndIf
 Next
