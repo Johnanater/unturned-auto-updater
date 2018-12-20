@@ -12,6 +12,11 @@ SETLOCAL ENABLEDELAYEDEXPANSION
 	SET SteamUser=YourUsername
 	SET SteamPass=YourPassword
 	
+	::Should the updater download Rocket?
+	::https://rocketmod.net/
+	::true/false
+	SET DownloadRocket=true
+	
 	::How often should it check for an update? Time is in seconds!
 	SET WaitTime=300
 	
@@ -100,14 +105,16 @@ echo.
 lib\SteamCMD\steamcmd.exe +login %SteamUser% %SteamPass% +force_install_dir %ServerPath% +"app_update 304930" validate +quit
 cls
 
-echo Starting download of Rocket
-echo ==============================
-echo.
-echo.
-lib\wget.exe -O temp\rocket.zip https://ci.rocketmod.net/job/Rocket.Unturned/lastSuccessfulBuild/artifact/Rocket.Unturned/bin/Release/Rocket.zip
-title Auto Update - Unturned
-powershell.exe -command "Expand-Archive temp\rocket.zip %ServerPath% -Force"
-del temp\rocket.zip
+if %DownloadRocket%=="true" (
+	echo Starting download of Rocket
+	echo ==============================
+	echo.
+	echo.
+	lib\wget.exe -O temp\rocket.zip https://ci.rocketmod.net/job/Rocket.Unturned/lastSuccessfulBuild/artifact/Rocket.Unturned/bin/Release/Rocket.zip
+	title Auto Update - Unturned
+	powershell.exe -command "Expand-Archive temp\rocket.zip %ServerPath% -Force"
+	del temp\rocket.zip
+)
 
 cls
 echo Your Unturned Server is up to date at %DATE% / %TIME%^^!
