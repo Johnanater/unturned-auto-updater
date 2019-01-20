@@ -22,9 +22,9 @@ https://www.youtube.com/watch?v=kiyZfqULYyU
 	**Answer**: No. The source code for Restart.exe and Start.exe are in the AutoIT .au3 files.
 	sed.exe and wget.exe are GNU ports to Windows and can be found here:
 
-	Sed: https://sourceforge.net/projects/win-bash/files/shell-complete/latest/ (3.02, In zip)
+	Sed: https://github.com/mbuilov/sed-windows (4.7)
 		
-	Wget: https://eternallybored.org/misc/wget/ (1.19.2)
+	Wget: https://eternallybored.org/misc/wget/ (1.20)
 			
 3. My antivirus detects Restart.exe and Start.exe as viruses!
 

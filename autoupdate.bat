@@ -60,8 +60,8 @@ if not exist temp\serverver.txt (
 ::The appcache has to be deleted in order for SteamCMD to actually update the app info
 ::Yes... I used sed and wget... (Sed is win-bash and wget is mingw32)
 if exist "lib\SteamCMD\appcache\appinfo.vdf" (del /f lib\SteamCMD\appcache\appinfo.vdf)
-lib\SteamCMD\steamcmd.exe +login %SteamUser% %SteamPass% +app_info_update 1 +app_info_print "304930" +quit | findstr /r "change number" >temp\vers.txt
-lib\sed.exe "s/\, last.*//" temp\vers.txt > temp\version.txt
+lib\SteamCMD\steamcmd.exe +login %SteamUser% %SteamPass% +app_info_update 1 +app_info_print "304930" +app_info_print "304930" +quit | findstr /r "buildid" > temp\vers.txt
+lib\sed.exe 2,9d temp\vers.txt > temp\version.txt
 
 ::Setting variables
 SET /p ServerVer=<temp\serverver.txt
