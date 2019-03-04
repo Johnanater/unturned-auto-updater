@@ -108,7 +108,7 @@ echo.
 lib\SteamCMD\steamcmd.exe +login %SteamUser% %SteamPass% +force_install_dir %ServerPath% +"app_update 304930" validate +quit
 cls
 
-if %DownloadRocket%=="true" (
+if "%DownloadRocket%"=="true" (
 	echo Starting download of Rocket
 	echo ==============================
 	echo.
