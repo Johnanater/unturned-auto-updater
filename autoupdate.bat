@@ -3,7 +3,7 @@ title Auto Update - Unturned
 echo =-= Auto Update for Unturned =-=
 echo     =-=Made by Johnanater=-=
 echo.
-SET Version=1.0.3
+SET Version=1.0.4
 
 ::Config
 SETLOCAL ENABLEDELAYEDEXPANSION
@@ -122,7 +122,9 @@ if "%DownloadRocket%"=="true" (
 	echo Starting download of Rocket
 	echo ==============================
 	echo.
-	lib\wget.exe -q -O temp\rocket.zip https://johnanater.com/downloads/unturned/rocketmod/Rocket.Unturned.zip
+	:: Copy from the Extras folder
+	xcopy %ServerPath%Extras\Rocket.Unturned %ServerPath%Modules\Rocket.Unturned /y
+	
 	title Auto Update - Unturned
 	powershell.exe -command "Expand-Archive temp\rocket.zip %ServerPath% -Force"
 	del temp\rocket.zip
